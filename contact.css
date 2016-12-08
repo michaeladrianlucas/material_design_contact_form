@@ -1,0 +1,212 @@
+/*****************************************
+http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*******************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+html{
+  height: 100%;
+  width:100%;
+}
+
+body{
+	height: auto;
+  width:100%;
+  overflow-x: hidden;
+}
+
+
+/************
+CONTACT FORM
+**************/
+
+#contact-form{
+	width: 400px;
+	height: auto;
+	margin: 50px auto;
+	padding: 50px;
+	box-shadow: 0 10px 20px
+	rgba(0,0,0,0.19),
+	0 6px 6px rgba(0,0,0,0.23);
+	font-family: 'Lato',sans-serif;
+}
+
+@media (max-width: 420px) {
+
+#contact-form{
+	width: 300px;
+	padding: 10px;
+
+	}
+}
+.group 			  {
+  position:relative;
+  margin-bottom:45px;
+}
+input,
+textarea 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:90%;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+textarea         {
+
+}
+input:focus 		{ outline:none; }
+textarea:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label,
+textarea:focus ~ label, textarea:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:95%; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#5264AE;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after,
+textarea:focus ~ .bar:before, textarea:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight,
+textarea:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+.btn {
+	display: block;
+  font-family: 'roboto', sans-serif;
+  transition: transform 0.2s cubic-bezier(.64,.09,.08,1),
+     box-shadow 0.2s cubic-bezier(.64,.09,.08,1);
+  border: none;
+  background: #2D5586;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 10px 6px;
+  width: 250px;
+  color: white;
+  margin: 30px 0 0 25px;
+
+	margin: 30px auto 0;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 6px 0 rgba(0,0,0,0.2);
+  }
+}
